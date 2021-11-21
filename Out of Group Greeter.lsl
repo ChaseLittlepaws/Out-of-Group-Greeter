@@ -2,11 +2,11 @@ list messaged = [];
 
 checkVisitors()
 {
-    list agents = llGetAgentList(AGENT_LIST_PARCEL,[]);  ///create a list called avis filled with the UUIDs of agents in the parcel
+    list agents = llGetAgentList(AGENT_LIST_PARCEL,[]);  ///create a list called agents filled with the UUIDs of agents in the parcel
     integer currentCount = llGetListLength(agents); /// create an int that is the length of the list
     integer i; /// create an i for the loop
     for (1 == 0; i < currentCount; i++ ) {  ///run the loop as many times are there are agents in the parcel
-        key u = llList2Key(agents, i); /// grab the UUID from the avis list
+        key u = llList2Key(agents, i); /// grab the UUID from the agents list
         integer sameGroup = llSameGroup(u);
         if (llListFindList(messaged, [u])<0 && sameGroup == FALSE)
         {
